@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fun_with_bloc/app/dependency/dependency.dart';
 import 'package:fun_with_bloc/app/route_config.dart';
 
 void main() {
+  Dependency.initDependency();
   runApp(const MyApp(
     config: RouteConfig(),
   ));
