@@ -1,1 +1,1 @@
-export './landing_sreen.dart';
+export 'landing_screen/landing_sreen.dart';
