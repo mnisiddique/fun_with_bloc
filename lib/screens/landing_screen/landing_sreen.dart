@@ -5,6 +5,7 @@ import 'package:fun_with_bloc/app/dialog/alert_service.dart';
 import 'package:fun_with_bloc/app/res/label_index.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/boolean_decision_alert.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/no_internet_alert.dart';
+import 'package:fun_with_bloc/commons/dialog/alert/willpopscope_alert.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -30,14 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async {
-        final alert = BooleanDecisionAlert(
-          alertMsg: AlertLabelRes.kLabelWantToGoBack,
-          alertTitle: AlertLabelRes.kLabelAreYoySure,
-        );
-        alert.config = alert.config.copyWith(barrierDismissible: false);
-        return await alertService.showAlert<bool>(context, alert) ?? false;
-      },
+      onWillPop: () async =>
+          await alertService.showAlert<bool>(context, WillPopScopeAlert()) ??
+          false,
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),

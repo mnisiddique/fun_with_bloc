@@ -11,6 +11,6 @@ class AlertStyleRes {
   static const TextStyle contentStyle = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 16.0,
-    color: Colors.grey,
+    color: Colors.blueGrey,
   );
 }
