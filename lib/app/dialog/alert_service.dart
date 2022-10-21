@@ -14,7 +14,7 @@ class AlertServiceImpl implements AlertService {
       return Future.value();
     }
     isShowing = true;
-    return showDialog(
+    return showDialog<T>(
       context: context,
       barrierDismissible: alert.config.barrierDismissible,
       barrierColor: alert.config.barrierColor,
