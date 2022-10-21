@@ -1,4 +1,5 @@
 import 'package:fun_with_bloc/app/dialog/alert_service.dart';
+import 'package:fun_with_bloc/app/dialog/bottomsheet_service.dart';
 import 'package:get_it/get_it.dart';
 
 class Dependency {
@@ -7,5 +8,6 @@ class Dependency {
 
   static void initDependency() {
     sl.registerLazySingleton(() => AlertServiceImpl());
+    sl.registerLazySingleton(() => BottomSheetServiceImpl());
   }
 }
