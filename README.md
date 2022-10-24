@@ -1,16 +1,9 @@
 # fun_with_bloc
 
-A new Flutter project.
+An experimental flutter project that tests several architectural pattern
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Conjecture on Putting constants in a project
+- All types of constants should belong to its feature folder. This apprach will make those constants well separated, non-conflicting and easy-finding.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
