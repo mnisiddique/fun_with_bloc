@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fun_with_bloc/app/dialog/alert_service.dart';
 import 'package:fun_with_bloc/app/dialog/bottomsheet_service.dart';
+import 'package:fun_with_bloc/app/navigation/route_names.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/no_internet_alert.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/willpopscope_alert.dart';
 import 'package:fun_with_bloc/commons/dialog/bottomsheet/beneficiary/beneficiary_picker.dart';
@@ -57,13 +58,6 @@ class _LandingScreenContentState extends State<LandingScreenContent> {
               const Text(
                 'You have pushed the button this many times:',
               ),
-              const Text(
-                'Flutter is a cross-platform framework that allows you to write iOS and Android apps using a single codebase.',
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 16.0,
-                ),
-              ),
               Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
@@ -72,12 +66,16 @@ class _LandingScreenContentState extends State<LandingScreenContent> {
                 color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () async {
-                  final type =
-                      await bottomSheetService.showBottomSheet<BeneficiaryType>(
-                          context, BeneficiaryPickerBottomSheet());
-                  setState(() {
-                    _beneType = type;
-                  });
+                  // final type =
+                  //     await bottomSheetService.showBottomSheet<BeneficiaryType>(
+                  //         context, BeneficiaryPickerBottomSheet());
+                  // setState(() {
+                  //   _beneType = type;
+                  // });
+                  Navigator.pushNamed(
+                    context,
+                    RouteNames.kTextWidgetPixelOverflowRoute,
+                  );
                 },
                 child: const Text("Confirm"),
               )
