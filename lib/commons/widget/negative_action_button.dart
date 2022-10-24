@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fun_with_bloc/app/res/style_index.dart';
+import 'package:fun_with_bloc/app/res/style_res/button_style_res.dart';
 
 class NegativeActionButton extends StatelessWidget {
   final String text;

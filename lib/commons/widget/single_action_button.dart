@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fun_with_bloc/app/res/style_index.dart';
+import 'package:fun_with_bloc/app/res/style_res/index.dart';
 
 class SingleActionButton extends StatelessWidget {
   final String text;

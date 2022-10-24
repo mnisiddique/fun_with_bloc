@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fun_with_bloc/app/dialog/app_dialog.dart';
-import 'package:fun_with_bloc/app/res/label_index.dart';
-import 'package:fun_with_bloc/app/res/style_index.dart';
+import 'package:fun_with_bloc/app/res/label_res/index.dart';
+import 'package:fun_with_bloc/app/res/style_res/alert_style_res.dart';
 import 'package:fun_with_bloc/commons/widget/single_action_button.dart';
 
 class NoInterNetAlert extends AppAlert {

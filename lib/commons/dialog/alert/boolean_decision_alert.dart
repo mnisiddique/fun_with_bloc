@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fun_with_bloc/app/dialog/app_dialog.dart';
-import 'package:fun_with_bloc/app/res/label_index.dart';
-import 'package:fun_with_bloc/app/res/style_index.dart';
+import 'package:fun_with_bloc/app/res/label_res/index.dart';
+import 'package:fun_with_bloc/app/res/style_res/index.dart';
 
-import '../../common_widget_index.dart';
+import '../../widget/index.dart';
 
 class BooleanDecisionAlert extends AppAlert {
   final String negativeButtonTitle;
