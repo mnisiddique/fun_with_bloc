@@ -1,10 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:fun_with_bloc/app/data/datasrc/remote/own_account_remote.dart';
 import 'package:fun_with_bloc/app/dialog/alert_service.dart';
-import 'package:fun_with_bloc/app/dialog/bottomsheet_service.dart';
+import 'package:fun_with_bloc/app/domain/entity/own_account.dart';
 import 'package:fun_with_bloc/app/navigation/route_names.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/no_internet_alert.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/willpopscope_alert.dart';
-import 'package:fun_with_bloc/commons/dialog/bottomsheet/beneficiary/beneficiary_picker.dart';
 import 'package:fun_with_bloc/commons/dialog/bottomsheet/beneficiary/view_model/beneficiary_type.dart';
 
 class LandingScreenContent extends StatefulWidget {
@@ -25,6 +27,12 @@ class _LandingScreenContentState extends State<LandingScreenContent> {
   BeneficiaryType? _beneType;
 
   void _incrementCounter() {
+    OwnAccountRepo repo = OwnAccountRepo(OwnAccountRemoteSrc());
+    final OwnAccountResponseEntity entity = repo();
+    log("accountTitle 1: ${entity.ownAccounts[0].accountTitle}");
+    log("accountTitle 2: ${entity.ownAccounts[1].accountTitle}");
+    log("accountNo 1: ${entity.ownAccounts[0].accountNo}");
+    log("accountNo 2: ${entity.ownAccounts[1].accountNo}");
     setState(() {
       _counter++;
     });

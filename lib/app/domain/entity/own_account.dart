@@ -1,6 +1,13 @@
 import 'package:equatable/equatable.dart';
+import 'package:fun_with_bloc/app/error/missing_response_value_error.dart';
+import 'package:fun_with_bloc/app/res/app_constant.dart';
+import 'package:fun_with_bloc/fund_transfer/own/domain/entity/to_own_account.dart';
 
-class OwnAccountEntity extends Equatable {
+class OwnAccountResponseEntity {
+  late final List<OwnAccountEntity> ownAccounts;
+}
+
+class OwnAccountEntity extends Equatable implements ToOwnBankAccount {
   final String? accountId;
   final String? accountNo;
   final String? branchName;
@@ -43,4 +50,32 @@ class OwnAccountEntity extends Equatable {
         status,
         cbsAccountStatus,
       ];
+
+  @override
+  String get toAccountBranchName =>
+      branchName ?? (throw MissingResponseValueError("branchName"));
+
+  @override
+  String get toAccountId =>
+      accountId ?? (throw MissingResponseValueError("accountId"));
+
+  @override
+  String get toAccountNo =>
+      accountNo ?? (throw MissingResponseValueError("accountNo"));
+
+  @override
+  String get toAccountProductName =>
+      productName ?? (throw MissingResponseValueError("productName"));
+
+  @override
+  String get toAccountTitle =>
+      (throw MissingResponseValueError("toAccountTitle"));
+
+  @override
+  String get toAccountWorkingBalance =>
+      workingBalance?.toString() ??
+      (throw MissingResponseValueError("workingBalance"));
+
+  @override
+  String get toBankId => AppConstants.bankId;
 }
