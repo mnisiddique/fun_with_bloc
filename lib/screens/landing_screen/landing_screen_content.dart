@@ -8,6 +8,9 @@ import 'package:fun_with_bloc/app/navigation/route_names.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/no_internet_alert.dart';
 import 'package:fun_with_bloc/commons/dialog/alert/willpopscope_alert.dart';
 import 'package:fun_with_bloc/commons/dialog/bottomsheet/beneficiary/view_model/beneficiary_type.dart';
+import 'package:fun_with_bloc/fund_transfer/core/domain/entity/preprocess_request_entity.dart';
+import 'package:fun_with_bloc/fund_transfer/core/domain/repo/preprocess_repository.dart';
+import 'package:fun_with_bloc/fund_transfer/intra/domain/entity/intra_bene_account.dart';
 
 class LandingScreenContent extends StatefulWidget {
   const LandingScreenContent({
@@ -26,13 +29,19 @@ class _LandingScreenContentState extends State<LandingScreenContent> {
 
   BeneficiaryType? _beneType;
 
+  PreprocessRequestEntity<ToIntraBeneficiaryAccount> request =
+      PreprocessRequestEntity<ToIntraBeneficiaryAccount>(
+    fromAccount: fakeOwn,
+    toAccount: fakeIntraBankBene,
+    remarks: "remarks",
+    amount: "10.0",
+    currency: "hello",
+  );
+
   void _incrementCounter() {
-    OwnAccountRepo repo = OwnAccountRepo(OwnAccountRemoteSrc());
-    final OwnAccountResponseEntity entity = repo();
-    log("accountTitle 1: ${entity.ownAccounts[0].accountTitle}");
-    log("accountTitle 2: ${entity.ownAccounts[1].accountTitle}");
-    log("accountNo 1: ${entity.ownAccounts[0].accountNo}");
-    log("accountNo 2: ${entity.ownAccounts[1].accountNo}");
+    PreprocessRepository<ToIntraBeneficiaryAccount> repo =
+        RepoImpl<ToIntraBeneficiaryAccount>();
+    repo.preprocess(request);
     setState(() {
       _counter++;
     });

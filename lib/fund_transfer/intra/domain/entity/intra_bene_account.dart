@@ -99,3 +99,26 @@ class IntraBeneficiaryEntity extends Equatable
       beneficiaryAccountNo ??
       (throw MissingResponseValueError("beneficiaryAccountNo"));
 }
+
+const fakeIntraBankBene = IntraBeneficiaryEntity(
+  accountTitle: 'Md. Nahidul Islam',
+  bankId: '010',
+  bankName: 'Agrani',
+  beneficiaryAccountNo: '02003',
+  beneficiaryId: 'beneId',
+  beneficiaryType: 'bene Type',
+  branchCode: 'branch Code',
+  branchName: 'Barisal',
+  currency: '',
+  description: '',
+  district: '',
+  districtCode: '',
+  email: '',
+  ibUserId: '',
+  imagePath: '',
+  mobileNo: '',
+  productCode: '',
+  productName: '',
+  routingNumber: '',
+  shortName: 'Guddu',
+);

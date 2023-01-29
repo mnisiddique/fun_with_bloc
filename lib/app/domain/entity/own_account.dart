@@ -79,3 +79,18 @@ class OwnAccountEntity extends Equatable implements ToOwnBankAccount {
   @override
   String get toBankId => AppConstants.bankId;
 }
+
+const OwnAccountEntity fakeOwn = OwnAccountEntity(
+  accountId: "accountId",
+  accountNo: "020256",
+  branchName: "Noakhali",
+  accountTitle: "Samsu Miah",
+  productCode: "productCode",
+  productName: "FDR account",
+  branchCode: "branchCode",
+  workingBalance: 1000.00,
+  balanceDateTime: "balanceDateTime",
+  currency: "BDT",
+  status: "status",
+  cbsAccountStatus: "cbsAccountStatus",
+);
